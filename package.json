@@ -1,0 +1,17 @@
+{
+  "name": "companies-portal",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "lerna run --parallel start",
+    "clean": "npx lerna clean -y"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
