@@ -22,7 +22,7 @@ function App() {
         <button
           onClick={() => {
             axios
-              .get("http://localhost:3001/")
+              .get("https://companies-server.herokuapp.com/")
               .then((res) => console.log(res.data));
           }}
         >
