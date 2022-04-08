@@ -14,7 +14,9 @@ model Country {
   id   Int    @id @default(autoincrement())
   name String
 
-  City City[]
+  Cities City[]
+
+  Companies Company[]
 }
 
 model City {
@@ -23,4 +25,30 @@ model City {
 
   country_id Int
   country    Country @relation(fields: [country_id], references: [id])
+
+  Companies Company[]
+}
+
+model IndustryType {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  Companies Company[]
+}
+
+model Company {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  address     String
+  isActive    Boolean @default(true)
+
+  industry_type_id Int
+  industry_type    IndustryType @relation(fields: [industry_type_id], references: [id])
+
+  country_id Int
+  country    Country @relation(fields: [country_id], references: [id])
+
+  city_id Int
+  city    City @relation(fields: [city_id], references: [id])
 }
