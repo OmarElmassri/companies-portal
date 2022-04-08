@@ -9,3 +9,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Country {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  City City[]
+}
+
+model City {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  country_id Int
+  country    Country @relation(fields: [country_id], references: [id])
+}
