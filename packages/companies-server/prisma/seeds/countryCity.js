@@ -3,6 +3,10 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const main = async () => {
+  // Clean countries and cities
+  await prisma.city.deleteMany();
+  await prisma.country.deleteMany();
+
   // Add Egypt
   await prisma.country.create({
     data: {

@@ -16,7 +16,7 @@ export class CityDto {
 
   @ApiProperty()
   @IsInt()
-  country_id?: number;
+  country_id: number;
 
   @ApiProperty()
   @Type(() => CountryDto)

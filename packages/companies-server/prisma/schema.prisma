@@ -38,7 +38,7 @@ model IndustryType {
 
 model Company {
   id          Int     @id @default(autoincrement())
-  name        String
+  name        String  @unique
   description String
   address     String
   isActive    Boolean @default(true)

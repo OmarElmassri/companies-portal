@@ -2,52 +2,65 @@ import { CityDto } from './city.dto';
 import { CountryDto } from './country.dto';
 import { IndustryTypeDto } from './industryType.dto';
 import { ApiProperty } from "@nestjs/swagger";
-import { IsBoolean, IsInt, IsNotEmpty, IsString } from "class-validator";
-import { Type } from 'class-transformer';
+import { IsBoolean, IsNotEmpty, IsOptional } from "class-validator";
+import { Transform, Type } from 'class-transformer';
 
 export class CompanyDto {
   id?: number;
 
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: `Company Name is required` })
+  @Transform(
+    (value) => value.trim(),
+    { toClassOnly: true }
+  )
   name: string;
 
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: `Description is required` })
+  @Transform(
+    (value) => value.trim(),
+    { toClassOnly: true }
+  )
   description: string;
 
   @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: `Address is required` })
+  @Transform(
+    (value) => value.trim(),
+    { toClassOnly: true }
+  )
   address: string;
 
   @ApiProperty()
+  @IsOptional()
   @IsBoolean()
   isActive?: boolean;
 
   @ApiProperty()
-  @IsInt()
-  industry_type_id?: number;
+  @IsNotEmpty({ message: `Industry Type is required` })
+  industry_type_id: number;
 
   @ApiProperty()
+  @IsOptional()
   @Type(() => IndustryTypeDto)
   industry_type?: IndustryTypeDto;
 
   @ApiProperty()
-  @IsInt()
-  country_id?: number;
+  @IsNotEmpty({ message: `Country is required` })
+  country_id: number;
 
   @ApiProperty()
+  @IsOptional()
   @Type(() => CountryDto)
   country?: CountryDto;
 
   @ApiProperty()
-  @IsInt()
-  city_id?: number;
+  @IsNotEmpty({ message: `City is required` })
+  city_id: number;
 
   @ApiProperty()
+  @IsOptional()
   @Type(() => CityDto)
   city?: CityDto;
 }

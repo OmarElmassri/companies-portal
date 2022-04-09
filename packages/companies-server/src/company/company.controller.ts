@@ -5,11 +5,36 @@ import { CompaniesPaginationDto } from './../DTOs/companies-pagination.dto';
 import { CompanyService } from './company.service';
 import { Body, Controller, Get, Param, Post, Put, ValidationPipe } from '@nestjs/common';
 import { ApiBody, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { validate, validateOrReject } from 'class-validator';
 
 @ApiTags('Company APIs')
 @Controller('company')
 export class CompanyController {
   constructor(private companyService: CompanyService) { }
+
+  // Get Industry Types
+  @ApiResponse({ status: 200, type: [IndustryTypeDto] })
+  @Get('industry-type')
+  async getIndustryTypes(): Promise<IndustryTypeDto[]> {
+    return await this.companyService.getIndustryTypes();
+  }
+
+  // Get Countries
+  @ApiResponse({ status: 200, type: [CountryDto] })
+  @Get('country')
+  async getCountries(): Promise<CountryDto[]> {
+    return await this.companyService.getCountries();
+  }
+
+  // Create Company
+  @ApiResponse({ status: 200, type: CompanyDto })
+  @ApiBody({ type: CompanyDto })
+  @Post('')
+  async createCompany(
+    @Body('') companyObject: CompanyDto
+  ): Promise<CompanyDto> {
+    return await this.companyService.createCompany(companyObject);
+  }
 
   // List Companies
   @ApiResponse({ status: 200, type: CompaniesPaginationDto })
@@ -24,31 +49,6 @@ export class CompanyController {
   @Get(':id')
   async getCompany(@Param('id') companyId: CompanyDto['id']): Promise<CompanyDto> {
     return await this.companyService.getCompany(companyId);
-  }
-
-  // Get Industry Types
-  @ApiResponse({ status: 200, type: [IndustryTypeDto] })
-  @Get('industry_type')
-  async getIndustryTypes(): Promise<IndustryTypeDto[]> {
-    return await this.companyService.getIndustryTypes();
-  }
-
-  // Get Countries
-  @ApiResponse({ status: 200, type: [CountryDto] })
-  @Get('country')
-  async getCountries(): Promise<CountryDto[]> {
-    return await this.companyService.getCountries();
-  }
-
-  // Create Company
-  @ApiResponse({ status: 200, type: CountryDto })
-  @ApiBody({ type: CompanyDto })
-  @Post('')
-  async createCompany(
-    @Body('company', new ValidationPipe({ skipMissingProperties: true }))
-    companyObject: CompanyDto
-  ): Promise<CompanyDto> {
-    return await this.companyService.createCompany(companyObject);
   }
 
   // Update Comppany
