@@ -1,0 +1,65 @@
+// Paragraph
+.parag-lit {
+  @extend .light;
+}
+.parag-med {
+  @extend .medium;
+}
+.parag-hev {
+  @extend .heavy;
+}
+.parag-blk {
+  @extend .blacked;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .parag-lit,
+  .parag-med,
+  .parag-hev,
+  .parag-blk {
+    font-size: 18px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .parag-lit,
+  .parag-med,
+  .parag-hev,
+  .parag-blk {
+    font-size: 18.5px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .parag-lit,
+  .parag-med,
+  .parag-hev,
+  .parag-blk {
+    font-size: 19px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .parag-lit,
+  .parag-med,
+  .parag-hev,
+  .parag-blk {
+    font-size: 19.5px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .parag-lit,
+  .parag-med,
+  .parag-hev,
+  .parag-blk {
+    font-size: 20px;
+  }
+}

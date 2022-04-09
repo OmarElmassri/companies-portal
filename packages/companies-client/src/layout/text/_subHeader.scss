@@ -1,0 +1,65 @@
+//Sub-Headers
+.shead-lit {
+  @extend .light;
+}
+.shead-med {
+  @extend .medium;
+}
+.shead-hev {
+  @extend .heavy;
+}
+.shead-blk {
+  @extend .blacked;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .shead-lit,
+  .shead-med,
+  .shead-hev,
+  .shead-blk {
+    font-size: 28px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .shead-lit,
+  .shead-med,
+  .shead-hev,
+  .shead-blk {
+    font-size: 29px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .shead-lit,
+  .shead-med,
+  .shead-hev,
+  .shead-blk {
+    font-size: 30px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .shead-lit,
+  .shead-med,
+  .shead-hev,
+  .shead-blk {
+    font-size: 31px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .shead-lit,
+  .shead-med,
+  .shead-hev,
+  .shead-blk {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,70 @@
+// Borders
+.border-brand {
+  border: 1px $brand solid;
+}
+.border-brand2 {
+  border: 1px $brand2 solid;
+}
+.border-orange {
+  border: 1px $orange solid;
+}
+.border-second {
+  border: 1px $second solid;
+}
+.border-dark {
+  border: 1px $dark solid;
+}
+.border-dark1 {
+  border: 1px $dark1 solid;
+}
+.border-grey {
+  border: 1px $grey solid;
+}
+.border-grey1 {
+  border: 1px $grey1 solid;
+}
+.border-grey2 {
+  border: 1px $grey2 solid;
+}
+.border-grey3 {
+  border: 1px $grey3 solid;
+}
+.border-alert {
+  border: 1px $alert solid;
+}
+.border-alert-imp {
+  border: 1px $alert solid !important;
+}
+.border-alert1 {
+  border: 1px $alert1 solid;
+}
+.border-black {
+  border: 1px $black solid;
+}
+.border-white {
+  border: 1px $white solid;
+}
+
+// Radials
+.radial {
+  border-radius: 50%;
+}
+.radial-edges {
+  border-radius: 50px;
+}
+
+// Borders None
+.border-none {
+  border: none;
+}
+.outline-none {
+  outline: none;
+}
+
+// List Dividers
+.list-divider {
+  border-bottom: 1px rgba($color: #000000, $alpha: 0.1) solid;
+}
+.list-divider-white {
+  border-bottom: 1px rgba($color: #ffffff, $alpha: 0.1) solid;
+}

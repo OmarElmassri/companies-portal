@@ -1,0 +1,65 @@
+// Labels
+.slabel-lit {
+  @extend .light;
+}
+.slabel-med {
+  @extend .medium;
+}
+.slabel-hev {
+  @extend .heavy;
+}
+.slabel-blk {
+  @extend .blacked;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .slabel-lit,
+  .slabel-med,
+  .slabel-hev,
+  .slabel-blk {
+    font-size: 20px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .slabel-lit,
+  .slabel-med,
+  .slabel-hev,
+  .slabel-blk {
+    font-size: 20.5px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .slabel-lit,
+  .slabel-med,
+  .slabel-hev,
+  .slabel-blk {
+    font-size: 21px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .slabel-lit,
+  .slabel-med,
+  .slabel-hev,
+  .slabel-blk {
+    font-size: 21.5px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .slabel-lit,
+  .slabel-med,
+  .slabel-hev,
+  .slabel-blk {
+    font-size: 22px;
+  }
+}

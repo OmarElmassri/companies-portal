@@ -1,0 +1,65 @@
+// Tiny Parag
+.tiny-lit {
+  @extend .light;
+}
+.tiny-med {
+  @extend .medium;
+}
+.tiny-hev {
+  @extend .heavy;
+}
+.tiny-blk {
+  @extend .blacked;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .tiny-lit,
+  .tiny-med,
+  .tiny-hev,
+  .tiny-blk {
+    font-size: 14px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .tiny-lit,
+  .tiny-med,
+  .tiny-hev,
+  .tiny-blk {
+    font-size: 14.5px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .tiny-lit,
+  .tiny-med,
+  .tiny-hev,
+  .tiny-blk {
+    font-size: 15px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .tiny-lit,
+  .tiny-med,
+  .tiny-hev,
+  .tiny-blk {
+    font-size: 15.5px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .tiny-lit,
+  .tiny-med,
+  .tiny-hev,
+  .tiny-blk {
+    font-size: 16px;
+  }
+}

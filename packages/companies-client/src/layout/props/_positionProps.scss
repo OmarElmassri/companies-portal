@@ -1,0 +1,314 @@
+// justify
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-left {
+  justify-content: left;
+}
+.justify-right {
+  justify-content: right;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
+.justify-space-around {
+  justify-content: space-around;
+}
+.justify-space-evenly {
+  justify-content: space-evenly;
+}
+.justify-baseline {
+  justify-content: baseline;
+}
+.justify-baseline {
+  justify-content: baseline;
+}
+
+// flex-align
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-left {
+  align-items: left;
+}
+.align-right {
+  align-items: right;
+}
+.align-space-between {
+  align-items: space-between;
+}
+.align-space-around {
+  align-items: space-around;
+}
+.align-space-evenly {
+  align-items: space-evenly;
+}
+.align-baseline {
+  align-items: baseline;
+}
+.align-stretch {
+  align-items: stretch;
+}
+
+// align-self
+.align-self-center {
+  align-self: center;
+}
+.align-self-start {
+  align-self: flex-start;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-baseline {
+  align-self: baseline;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+
+// justify-self
+.justify-self-center {
+  justify-self: center;
+}
+.justify-self-start {
+  justify-self: flex-start;
+}
+.justify-self-end {
+  justify-self: flex-end;
+}
+.justify-self-baseline {
+  justify-self: baseline;
+}
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+// Positions
+.absolute {
+  position: absolute;
+}
+.absolute-imp {
+  position: absolute !important;
+}
+.relative {
+  position: relative;
+}
+.sticky {
+  position: sticky;
+}
+.fixed {
+  position: fixed;
+}
+.inherit {
+  position: inherit;
+}
+
+// Inset Absolute
+.inset-abs {
+  inset: 2rem;
+}
+.inset-med-abs {
+  inset: 1rem;
+}
+.inset-sm-abs {
+  inset: 0.5rem;
+}
+.inset-tiny-abs {
+  inset: 0.2rem;
+}
+.inset-zero-abs {
+  inset: 0;
+}
+
+// Top Absolute
+.top-abs {
+  top: 2rem;
+}
+.top-med-abs {
+  top: 1rem;
+}
+.top-sm-abs {
+  top: 0.5rem;
+}
+.top-tiny-abs {
+  top: 0.2rem;
+}
+.top-zero-abs {
+  top: 0;
+}
+
+// Bottom Absolute
+.bottom-abs {
+  bottom: 2rem;
+}
+.bottom-med-abs {
+  bottom: 1rem;
+}
+.bottom-sm-abs {
+  bottom: 0.5rem;
+}
+.bottom-tiny-abs {
+  bottom: 0.2rem;
+}
+.bottom-zero-abs {
+  bottom: 0;
+}
+
+// Right Absolute
+.right-abs {
+  right: 2rem;
+}
+.right-med-abs {
+  right: 1rem;
+}
+.right-sm-abs {
+  right: 0.5rem;
+}
+.right-tiny-abs {
+  right: 0.2rem;
+}
+.right-zero-abs {
+  right: 0;
+}
+
+// Left Absolute
+.left-abs {
+  left: 2rem;
+}
+.left-med-abs {
+  left: 1rem;
+}
+.left-sm-abs {
+  left: 0.5rem;
+}
+.left-tiny-abs {
+  left: 0.2rem;
+}
+.left-zero-abs {
+  left: 0;
+}
+
+// Top-Left Absolute
+.top-left-abs {
+  top: 2rem;
+  left: 2rem;
+}
+.top-left-med-abs {
+  top: 1rem;
+  left: 1rem;
+}
+.top-left-sm-abs {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+.top-left-tiny-abs {
+  top: 0.2rem;
+  left: 0.2rem;
+}
+.top-left-zero-abs {
+  top: 0;
+  left: 0;
+}
+
+// Top-Right Absolute
+.top-right-abs {
+  top: 2rem;
+  right: 2rem;
+}
+.top-right-med-abs {
+  top: 1rem;
+  right: 1rem;
+}
+.top-right-sm-abs {
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.top-right-tiny-abs {
+  top: 0.2rem;
+  right: 0.2rem;
+}
+.top-right-zero-abs {
+  top: 0;
+  right: 0;
+}
+
+// Bottom-Left Absolute
+.bottom-left-abs {
+  bottom: 2rem;
+  left: 2rem;
+}
+.bottom-left-med-abs {
+  bottom: 1rem;
+  left: 1rem;
+}
+.bottom-left-sm-abs {
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+.bottom-left-tiny-abs {
+  bottom: 0.2rem;
+  left: 0.2rem;
+}
+.bottom-left-zero-abs {
+  bottom: 0;
+  left: 0;
+}
+
+// Bottom-Right Absolute
+.bottom-right-abs {
+  bottom: 2rem;
+  right: 2rem;
+}
+.bottom-right-med-abs {
+  bottom: 1rem;
+  right: 1rem;
+}
+.bottom-right-sm-abs {
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+.bottom-right-tiny-abs {
+  bottom: 0.2rem;
+  right: 0.2rem;
+}
+.bottom-right-zero-abs {
+  bottom: 0;
+  right: 0;
+}
+
+// floating
+.floating-en {
+  bottom: 3rem;
+  right: 1rem;
+}
+.floating-ar {
+  bottom: 3rem;
+  left: 1rem;
+}
+
+// overflow
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-auto-imp {
+  overflow: auto !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-hidden-imp {
+  overflow: hidden !important;
+}

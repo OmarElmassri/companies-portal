@@ -1,0 +1,15 @@
+{
+  "brand": "Company-Portal",
+  "action": {
+    "iam-sure": "I'm Sure",
+    "iam-not": "i'm not",
+    "save": "Save",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "error": {
+    "error": "Error, Try again",
+    "required": "{{field}} is Required",
+    "not-valid": "{{field}} is not Valid"
+  }
+}

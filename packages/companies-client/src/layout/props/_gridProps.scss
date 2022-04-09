@@ -1,0 +1,116 @@
+// Grid Utilities
+.grid,
+.single-grid,
+.double-grid,
+.large-double-grid,
+.triple-grid,
+.four-grid,
+.fifth-grid,
+.one-third-grid,
+.one-third-grid-resp,
+.option-grid,
+.third-grid {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+// Grid Types
+.single-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+.one-third-grid {
+  grid-template-columns: 1fr 3fr;
+}
+.option-grid {
+  grid-template-columns: 0.5fr 3fr 0.5fr;
+}
+
+// Grid Gap
+.grid-gap {
+  grid-gap: 2rem;
+}
+.grid-high-gap {
+  grid-gap: 1.5rem;
+}
+.grid-med-gap {
+  grid-gap: 1rem;
+}
+.grid-sm-gap {
+  grid-gap: 0.5rem;
+}
+.grid-tiny-gap {
+  grid-gap: 0.2rem;
+}
+.grid-zero-gap {
+  grid-gap: 0;
+}
+
+// Grid Align
+.grid-center {
+  align-self: center;
+  justify-self: center;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .double-grid,
+  .triple-grid,
+  .four-grid,
+  .fifth-grid,
+  .one-third-grid-resp {
+    grid-template-columns: 1fr;
+  }
+  .third-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+  .double-grid,
+  .triple-grid,
+  .four-grid,
+  .fifth-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .one-third-grid-resp {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+  .fifth-grid,
+  .four-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .large-double-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+  .four-grid,
+  .fifth-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .large-double-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .triple-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .third-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .fifth-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,104 @@
+// Big Container
+.full-container,
+.not-full-container {
+  margin: auto;
+}
+.layout-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  .flow-cont {
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+  .content-container {
+    height: 100%;
+    .top-extend {
+      padding-top: 1rem;
+    }
+    .bottom-extend {
+      padding-bottom: 2rem;
+    }
+  }
+  .top-loader {
+    position: fixed;
+  }
+  .top-loader {
+    top: 60px;
+  }
+}
+.title-cont {
+  .title {
+    padding: 0.5rem 0.5rem;
+  }
+}
+// Cards
+.card {
+  @extend .shadow;
+  @extend .relative;
+  @extend .white-back;
+  @extend .fit-content;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .full-container {
+    width: 100%;
+  }
+  .not-full-container {
+    width: 90%;
+  }
+  .padding-card {
+    padding: 1rem 0;
+  }
+  .layout-container {
+    .content-container {
+      .top-extend-fill {
+        padding-top: 0;
+      }
+    }
+  }
+  .noncard-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .full-container,
+  .not-full-container {
+    width: 90%;
+  }
+  .layout-container {
+    .content-container {
+      .top-extend-fill {
+        padding-top: 1rem;
+      }
+    }
+  }
+  .noncard-container {
+    padding: 0;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .full-container,
+  .not-full-container {
+    width: 80%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .padding-card {
+    padding: 2rem 0;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

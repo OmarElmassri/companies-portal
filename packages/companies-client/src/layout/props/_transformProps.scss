@@ -1,0 +1,21 @@
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+.scale-up {
+  transform: scale(1.02, 1.02);
+}
+.scale-down {
+  transform: scale(0.6);
+}
+.scale-down-small {
+  transform: scale(0.3);
+}
+.flip {
+  transform: scaleX(-1);
+}
+.transform-none {
+  transform: unset;
+}
+.transform-none-imp {
+  transform: unset !important;
+}

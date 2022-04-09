@@ -1,0 +1,64 @@
+@import "./dimensionProps";
+@import "./textProps";
+@import "./shdowProps";
+@import "./flexProps";
+@import "./separationProps";
+@import "./positionProps";
+@import "./gridProps";
+@import "./boxProps";
+@import "./transformProps";
+@import "./hoverProps";
+@import "./borderProps";
+
+// cursor
+.default {
+  cursor: default;
+}
+.pointer {
+  cursor: pointer;
+}
+.forbid {
+  cursor: not-allowed !important;
+}
+
+// index
+.index {
+  z-index: 1;
+}
+.index2 {
+  z-index: 2;
+}
+
+// major props
+.audi-imgs {
+  @extend .flex-nowrap;
+  @for $i from 0 through 10 {
+    :nth-child(#{$i + 1}) {
+      transform: translateX($i * -1rem);
+    }
+  }
+  > .circle-img {
+    border: 1px $white solid;
+  }
+}
+.audi-imgs-ar {
+  @extend .flex-nowrap;
+  @for $i from 0 through 10 {
+    :nth-child(#{$i + 1}) {
+      transform: translateX($i * 1rem);
+    }
+  }
+  > .circle-img {
+    border: 1px $white solid;
+  }
+}
+.disabled {
+  opacity: $opacity;
+  @extend .forbid;
+}
+.opacity {
+  opacity: $opacity;
+}
+.not-dir {
+  direction: ltr;
+}

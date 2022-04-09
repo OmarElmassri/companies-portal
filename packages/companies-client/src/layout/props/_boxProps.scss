@@ -1,0 +1,68 @@
+// Background
+.black-opacity-back {
+  background-color: $blackOpacity;
+}
+.brand-back {
+  background-color: $brand;
+}
+.brand2-back {
+  background-color: $brand2;
+}
+.orange-back {
+  background-color: $orange;
+}
+.second-back {
+  background-color: $second;
+}
+.dark-back {
+  background-color: $dark;
+}
+.dark1-back {
+  background-color: $dark1;
+}
+.grey-back {
+  background-color: $grey;
+}
+.grey1-back {
+  background-color: $grey1;
+}
+.grey2-back {
+  background-color: $grey2;
+}
+.grey3-back {
+  background-color: $grey3;
+}
+.alert-back {
+  background-color: $alert;
+}
+.alert1-back {
+  background-color: $alert1;
+}
+.white-back {
+  background-color: $white;
+}
+.black-back {
+  background-color: $black;
+}
+.trans-back {
+  background-color: transparent;
+}
+.trans-back-imp {
+  background-color: transparent !important;
+}
+
+// Display
+.none {
+  display: none;
+}
+.none-imp {
+  display: none !important;
+}
+
+// Object Fit
+.fit-cover {
+  object-fit: cover;
+}
+.fit-contain {
+  object-fit: contain;
+}

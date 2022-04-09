@@ -1,0 +1,128 @@
+// Colors
+.brand {
+  color: $brand;
+}
+.orange {
+  color: $orange;
+}
+.second {
+  color: $second;
+}
+.dark {
+  color: $dark;
+}
+.dark1 {
+  color: $dark1;
+}
+.grey {
+  color: $grey;
+}
+.grey1 {
+  color: $grey1;
+}
+.grey2 {
+  color: $grey2;
+}
+.grey3 {
+  color: $grey3;
+}
+.error {
+  color: $alert;
+}
+.error2 {
+  color: $alert1;
+}
+.alert-talk {
+  color: $alert-talk;
+}
+.white {
+  color: $white;
+}
+.black {
+  color: $black;
+}
+
+// Utilities
+.text-opacity {
+  opacity: $opacity;
+}
+.text-zero-height {
+  line-height: 0;
+}
+.text-height {
+  line-height: $line-height;
+}
+.text-height-lrg {
+  line-height: $line-height-large;
+}
+.text-break {
+  word-break: break-all;
+}
+.text-place-holder {
+  opacity: 0.6;
+}
+
+// align
+.text-justify {
+  text-align: justify;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-start {
+  text-align: start;
+}
+.text-end {
+  text-align: end;
+}
+
+// decorations
+.text-underline {
+  text-decoration: underline;
+}
+.text-underline-hover {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.text-upper {
+  text-transform: uppercase;
+}
+.text-line {
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
+}
+
+// status
+.pending {
+  @extend .orange;
+}
+.confirmed,
+.going,
+.active {
+  @extend .brand;
+}
+.finished,
+.rejected {
+  color: $second;
+}
+.archived {
+  color: $dark;
+  @extend .text-opacity;
+}
+.deactivated {
+  @extend .error;
+}
+
+// Long text
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

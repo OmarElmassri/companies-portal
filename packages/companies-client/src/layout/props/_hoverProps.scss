@@ -1,0 +1,190 @@
+// Hovering
+.scale-hover {
+  @extend .transition;
+  &:hover {
+    @extend .scale-up;
+  }
+}
+.shadow-hover {
+  @extend .transition;
+  &:hover {
+    @extend .shadow;
+  }
+}
+.shadow-hev-hover {
+  @extend .transition;
+  &:hover {
+    @extend .shadow-hover;
+  }
+}
+.line-hover {
+  @extend .transition;
+  &:hover {
+    @extend .text-underline;
+  }
+}
+.decoration-hover-none {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// coloring
+.brand-hover {
+  @extend .transition;
+  &:hover {
+    color: $brand;
+  }
+}
+.orange-hover {
+  @extend .transition;
+  &:hover {
+    color: $orange;
+  }
+}
+.second-hover {
+  @extend .transition;
+  &:hover {
+    color: $second;
+  }
+}
+.dark-hover {
+  @extend .transition;
+  &:hover {
+    color: $dark;
+  }
+}
+.dark1-hover {
+  @extend .transition;
+  &:hover {
+    color: $dark1;
+  }
+}
+.grey-hover {
+  @extend .transition;
+  &:hover {
+    color: $grey;
+  }
+}
+.grey1-hover {
+  @extend .transition;
+  &:hover {
+    color: $grey1;
+  }
+}
+.grey2-hover {
+  @extend .transition;
+  &:hover {
+    color: $grey2;
+  }
+}
+.grey3-hover {
+  @extend .transition;
+  &:hover {
+    color: $grey3;
+  }
+}
+.alert-hover {
+  @extend .transition;
+  &:hover {
+    color: $alert;
+  }
+}
+.alert1-hover {
+  @extend .transition;
+  &:hover {
+    color: $alert1;
+  }
+}
+.black-hover {
+  @extend .transition;
+  &:hover {
+    color: $black;
+  }
+}
+.white-hover {
+  @extend .transition;
+  &:hover {
+    color: $white;
+  }
+}
+
+// backing
+.brand-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $brand;
+  }
+}
+.orange-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $orange;
+  }
+}
+.second-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $second;
+  }
+}
+.dark-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $dark;
+  }
+}
+.dark1-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $dark1;
+  }
+}
+.grey-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $grey;
+  }
+}
+.grey1-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $grey1;
+  }
+}
+.grey2-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $grey2;
+  }
+}
+.grey3-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $grey3;
+  }
+}
+.alert-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $alert;
+  }
+}
+.alert1-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $alert1;
+  }
+}
+.black-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $black;
+  }
+}
+.white-back-hover {
+  @extend .transition;
+  &:hover {
+    background-color: $white;
+  }
+}

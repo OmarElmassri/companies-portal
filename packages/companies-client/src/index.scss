@@ -1,0 +1,22 @@
+@import "./layout/main.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $grey;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cecece;
+}

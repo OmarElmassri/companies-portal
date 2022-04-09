@@ -1,0 +1,36 @@
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+  .cart-item {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+  .cart-item {
+    grid-template-columns: 1fr 4fr 2fr 2fr;
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+  .cart-item {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cart-item {
+    grid-template-columns: 1fr 4fr 2fr 2fr;
+  }
+}

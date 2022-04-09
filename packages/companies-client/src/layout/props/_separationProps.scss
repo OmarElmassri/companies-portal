@@ -1,0 +1,285 @@
+// All Padd/Marg
+.all-padd {
+  padding: 2rem;
+}
+.all-med-padd {
+  padding: 1rem;
+}
+.all-sm-padd {
+  padding: 0.5rem;
+}
+.zero-padd {
+  padding: 0;
+}
+.zero-padd-imp {
+  padding: 0 !important;
+}
+.all-marg {
+  margin: 2rem;
+}
+.all-med-marg {
+  margin: 1rem;
+}
+.all-sm-marg {
+  margin: 0.5rem;
+}
+.zero-marg {
+  margin: 0;
+}
+.zero-marg-imp {
+  margin: 0 !important;
+}
+
+// Top Padd/Marg
+.top-padd {
+  padding-top: 2rem;
+}
+.top-med-padd {
+  padding-top: 1rem;
+}
+.top-sm-padd {
+  padding-top: 0.5rem;
+}
+.top-tiny-padd {
+  padding-top: 0.2rem;
+}
+.top-zero-padd {
+  padding-top: 0;
+}
+.top-marg {
+  margin-top: 2rem;
+}
+.top-med-marg {
+  margin-top: 1rem;
+}
+.top-sm-marg {
+  margin-top: 0.5rem;
+}
+.top-zero-marg {
+  margin-top: 0;
+}
+
+// Bottom Padd/Marg
+.bottom-padd {
+  padding-bottom: 2rem;
+}
+.bottom-med-padd {
+  padding-bottom: 1rem;
+}
+.bottom-sm-padd {
+  padding-bottom: 0.5rem;
+}
+.bottom-zero-padd {
+  padding-bottom: 0;
+}
+.bottom-marg {
+  margin-bottom: 2rem;
+}
+.bottom-med-marg {
+  margin-bottom: 1rem;
+}
+.bottom-sm-marg {
+  margin-bottom: 0.5rem;
+}
+.bottom-zero-marg {
+  margin-bottom: 0;
+}
+
+// Side Padd/Marg
+.side-padd {
+  padding: 0 2rem;
+}
+.side-padd-imp {
+  padding: 0 2rem !important;
+}
+.side-med-padd {
+  padding: 0 1rem;
+}
+.side-sm-padd {
+  padding: 0 0.5rem;
+}
+.side-marg {
+  margin: 0 2rem;
+}
+.side-med-marg {
+  margin: 0 1rem;
+}
+.side-sm-marg {
+  margin: 0 0.5rem;
+}
+
+// Vertical Padd/Marg
+.vertical-padd {
+  padding: 2rem 0;
+}
+.vertical-med-padd {
+  padding: 1rem 0;
+}
+.vertical-sm-padd {
+  padding: 0.5rem 0;
+}
+.vertical-marg {
+  margin: 2rem 0;
+}
+.vertical-med-marg {
+  margin: 1rem 0;
+}
+.vertical-sm-marg {
+  margin: 0.5rem 0;
+}
+
+// Right Padd/Marg
+.right-padd {
+  padding-right: 2rem;
+}
+.right-med-padd {
+  padding-right: 1rem;
+}
+.right-sm-padd {
+  padding-right: 0.5rem;
+}
+.right-zero-padd {
+  padding-right: 0;
+}
+.right-marg {
+  margin-right: 2rem;
+}
+.right-med-marg {
+  margin-right: 1rem;
+}
+.right-sm-marg {
+  margin-right: 0.5rem;
+}
+.right-zero-marg {
+  margin-right: 0;
+}
+
+// Left Padd/Marg
+.left-padd {
+  padding-left: 2rem;
+}
+.left-med-padd {
+  padding-left: 1rem;
+}
+.left-sm-padd {
+  padding-left: 0.5rem;
+}
+.left-zero-padd {
+  padding-left: 0;
+}
+.left-marg {
+  margin-left: 2rem;
+}
+.left-med-marg {
+  margin-left: 1rem;
+}
+.left-sm-marg {
+  margin-left: 0.5rem;
+}
+.left-zero-marg {
+  margin-left: 0;
+}
+
+// Start Padd/Marg
+.start-padd {
+  padding-inline-start: 2rem;
+}
+.start-med-padd {
+  padding-inline-start: 1rem;
+}
+.start-sm-padd {
+  padding-inline-start: 0.5rem;
+}
+.start-zero-padd {
+  padding-inline-start: 0;
+}
+.start-marg {
+  margin-inline-start: 2rem;
+}
+.start-med-marg {
+  margin-inline-start: 1rem;
+}
+.start-sm-marg {
+  margin-inline-start: 0.5rem;
+}
+.start-zero-marg {
+  margin-inline-start: 0;
+}
+
+// End Padd/Marg
+.end-padd {
+  padding-inline-end: 2rem;
+}
+.end-med-padd {
+  padding-inline-end: 1rem;
+}
+.end-sm-padd {
+  padding-inline-end: 0.5rem;
+}
+.end-zero-padd {
+  padding-inline-end: 0;
+}
+.end-marg {
+  margin-inline-end: 2rem;
+}
+.end-med-marg {
+  margin-inline-end: 1rem;
+}
+.end-sm-marg {
+  margin-inline-end: 0.5rem;
+}
+.end-zero-marg {
+  margin-inline-end: 0;
+}
+
+// boxes
+.box-sm-padd {
+  padding: 0.5rem 1rem;
+}
+.box-sm-padd-imp {
+  padding: 0.5rem 1rem !important;
+}
+.box-sm-padd-rev {
+  padding: 1rem 0.5rem;
+}
+.box-sm-marg {
+  margin: 0.5rem 1rem;
+}
+.box-sm-marg-rev {
+  margin: 1rem 0.5rem;
+}
+.box-med-padd {
+  padding: 1rem 2rem;
+}
+.box-med-padd-rev {
+  padding: 2rem 1rem;
+}
+.box-med-marg {
+  margin: 1rem 2rem;
+}
+.box-med-marg-rev {
+  margin: 2rem 1rem;
+}
+
+// auto
+.margin-auto {
+  margin: auto;
+}
+
+// sep dot
+.padd-dot {
+  width: 4px;
+  height: 4px;
+  @extend .radial;
+  background-color: $dark;
+  margin: 0 0.5rem;
+  opacity: $opacity;
+}
+.padd-dot-white {
+  width: 4px;
+  height: 4px;
+  @extend .radial;
+  background-color: $white;
+  margin: 0 0.5rem;
+  opacity: $opacity;
+}

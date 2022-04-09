@@ -1,0 +1,38 @@
+// Main Colors
+$brand: #0d72b9;
+$brand2: #d7ebfe;
+$orange: #efa12f;
+$second: #a70a49;
+$dark: #443f40;
+$dark1: #363636;
+$grey: #f9fafb;
+$grey1: #ebebeb;
+$grey2: #dddddd;
+$grey3: #f0f0f0;
+$alert: #ff0101;
+$alert1: #f4dddd;
+$alert-talk: #b71c1c;
+
+// Default
+$white: #ffffff;
+$black: #000000;
+
+// Opacities
+$blackOpacity: rgba(
+  $color: #000000,
+  $alpha: 0.5,
+);
+
+// Brand Layers
+$brandFade1: #d6e9b1;
+$brandFade2: #b6d27b;
+$brandMedium: #a3c955;
+$brandDark: #96bf0d;
+
+// Helper Colors
+$brown1: #d1927f;
+$brown2: #a3897a;
+$milk: #00d5ff;
+$lime: #12ff01;
+$purp: #c800ff;
+$ziet: #c2d210;

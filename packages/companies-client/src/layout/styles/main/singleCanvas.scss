@@ -1,0 +1,47 @@
+.single-canvas {
+  @extend .single-grid;
+  margin: auto;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .single-canvas {
+    width: 100%;
+    .single-logo {
+      margin: 0 2rem;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+  .single-canvas {
+    width: 80%;
+    .single-logo {
+      margin: 0;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+  .single-canvas {
+    width: 70%;
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+  .single-canvas {
+    width: 65%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .single-canvas {
+    width: 60%;
+  }
+}

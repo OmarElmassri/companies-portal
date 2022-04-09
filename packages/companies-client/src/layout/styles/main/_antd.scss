@@ -1,0 +1,103 @@
+.ant-steps {
+  .ant-steps-item-finish {
+    .ant-steps-item-tail {
+      display: none;
+    }
+    .ant-steps-item-icon {
+      background-color: $brand;
+      .ant-steps-icon {
+        svg path {
+          color: $white !important;
+        }
+      }
+    }
+  }
+  .ant-steps-item-process {
+    .ant-steps-item-icon {
+      background-color: $white !important;
+      .ant-steps-icon {
+        color: $dark !important;
+      }
+    }
+  }
+}
+.ant-radio-wrapper {
+  white-space: pre-wrap !important;
+  flex-wrap: nowrap !important;
+}
+.ant-select-dropdown,
+.ant-picker-dropdown {
+  z-index: 1500 !important;
+}
+.ant-layout {
+  background: $white !important;
+}
+.br-badge {
+  .ant-scroll-number {
+    background-color: $brand;
+    .ant-scroll-number-only-unit {
+      color: $white;
+    }
+  }
+}
+.gr-badge {
+  .ant-scroll-number {
+    background-color: $grey1;
+  }
+}
+.ant-image-preview-operations {
+  .ant-image-preview-operations-operation {
+    svg {
+      fill: $white !important;
+    }
+  }
+}
+.ant-image-preview {
+  background-color: rgba($color: #000000, $alpha: 0.7);
+}
+.circle-img,
+.square-img {
+  .ant-skeleton {
+    .ant-skeleton-avatar {
+      height: 100%;
+    }
+  }
+}
+.upload-box {
+  .ant-upload {
+    @extend .full-width;
+  }
+}
+.ant-message-notice {
+  .ant-message-notice-content {
+    .ant-message-custom-content {
+      @extend .tiny-med;
+      .anticon {
+        @extend .end-sm-marg;
+        @extend .start-zero-marg;
+      }
+    }
+  }
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

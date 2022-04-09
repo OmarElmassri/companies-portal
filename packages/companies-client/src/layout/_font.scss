@@ -1,0 +1,21 @@
+@mixin fontLine {
+  line-height: 1.1;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.light {
+  @include fontLine;
+  font-weight: 300;
+}
+.medium {
+  @include fontLine;
+  font-weight: 400;
+}
+.heavy {
+  @include fontLine;
+  font-weight: 500;
+}
+.blacked {
+  @include fontLine;
+  font-weight: 700;
+}
