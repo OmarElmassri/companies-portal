@@ -6,6 +6,8 @@ import { CompanyDto } from './../DTOs/company.dto';
 import { CompaniesPaginationDto } from './../DTOs/companies-pagination.dto';
 import { PrismaService } from './../prisma.service';
 import { HttpException, HttpStatus, Injectable, Logger } from '@nestjs/common';
+import { generateCode } from 'src/utils/helperFunctions';
+import { Prisma } from '@prisma/client'
 
 @Injectable()
 export class CompanyService {
@@ -16,8 +18,7 @@ export class CompanyService {
     try {
       return await this.prisma.industryType.findMany();
     } catch (e) {
-      Logger.error(e.message);
-      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(e, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
@@ -30,44 +31,67 @@ export class CompanyService {
         }
       })
     } catch (e) {
-      Logger.error(e.message);
-      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(e, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
   // List Companies
-  async listCompanies(): Promise<CompaniesPaginationDto> {
+  async listCompanies(keyword: string): Promise<CompaniesPaginationDto> {
     try {
-      return {} as CompaniesPaginationDto;
+      // Find Companies Conditions
+      const findCompaniesWhereConditions: Prisma.CompanyWhereInput = {
+        name: {
+          contains: keyword,
+          mode: 'insensitive'
+        },
+        isActive: true
+      }
+
+      // Company Count
+      const companyCount: number = await this.prisma.company.count({
+        where: findCompaniesWhereConditions
+      })
+
+      // Company Data
+      const companies: CompanyDto[] = await this.prisma.company.findMany({
+        where: findCompaniesWhereConditions,
+        include: {
+          industry_type: true,
+          country: true,
+          city: true
+        },
+        orderBy: [{ name: 'asc' }]
+      })
+
+      return {
+        count: companyCount,
+        data: companies
+      };
     } catch (e) {
-      Logger.error(e.message);
-      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(e, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
   // Get Company
-  async getCompany(companyId: number): Promise<CompanyDto> {
+  async getCompany(companyCode: string): Promise<CompanyDto> {
     try {
-      return {} as CompanyDto;
+      return await this.prisma.company.findFirst({ where: { code: companyCode } });
     } catch (e) {
-      Logger.error(e.message);
-      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(e, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
   // Create Company
   async createCompany(companyObject: CompanyDto): Promise<CompanyDto> {
     try {
-      // Convert object to dto class
-      companyObject = plainToClass(CompanyDto, companyObject);
-
       // Validate company
-      await validateOrReject(companyObject);
+      companyObject = await this.validateCompanyModel(companyObject, false);
 
       // Check company name uniqueness
       let isCompanyExist = await this.prisma.company.findFirst({
         where: {
-          name: companyObject.name
+          name: companyObject.name,
+          isActive: true
         }
       });
       if (isCompanyExist) throw new HttpException('Company already exists, change company name', HttpStatus.BAD_REQUEST);
@@ -82,6 +106,7 @@ export class CompanyService {
       const company: CompanyDto = await this.prisma.company.create({
         data: {
           ...leanCompany,
+          code: generateCode('CO'),
           industry_type: {
             connect: { id: industry_type_id }
           },
@@ -101,13 +126,58 @@ export class CompanyService {
   }
 
   // Update Comppany
-  async updateCompany(companyId: number, companyObject: Partial<CompanyDto>): Promise<CompanyDto> {
+  async updateCompany(companyCode: string, companyObject: Partial<CompanyDto>): Promise<CompanyDto> {
     try {
-      return {} as CompanyDto;
+      // Validate company
+      companyObject = await this.validateCompanyModel(companyObject, true);
+
+      // Destruct company
+      const { id, industry_type_id, country_id, city_id, ...leanCompany } = companyObject;
+
+      // Check company name uniqueness
+      let isCompanyExist = await this.prisma.company.findFirst({
+        where: {
+          name: companyObject.name,
+          isActive: true
+        }
+      });
+      if (isCompanyExist && isCompanyExist.code !== companyCode) throw new HttpException('Company already exists, change company name', HttpStatus.BAD_REQUEST);
+
+      // Check existence of country, city and industry type
+      await this.checkUtilitiesExist(country_id, city_id, industry_type_id);
+
+      // Update Company
+      const updatedCompany = await this.prisma.company.update({
+        where: { code: companyCode },
+        data: {
+          ...leanCompany,
+          industry_type: {
+            connect: { id: industry_type_id }
+          },
+          country: {
+            connect: { id: country_id }
+          },
+          city: {
+            connect: { id: city_id }
+          }
+        }
+      })
+
+      return updatedCompany;
     } catch (e) {
-      Logger.error(e.message);
-      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(e, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  }
+
+  // Delete Company
+  async deleteCompany(companyCode: string): Promise<CompanyDto> {
+    // Update Company
+    const updatedCompany = await this.prisma.company.update({
+      where: { code: companyCode },
+      data: { isActive: false }
+    })
+
+    return updatedCompany;
   }
 
   // Check existence of Country, City and Industry Type
@@ -120,7 +190,7 @@ export class CompanyService {
 
     // Check city
     let isCityExist = await this.prisma.city.findFirst({
-      where: { id: city_id }
+      where: { id: city_id, country_id }
     })
     if (!isCityExist) throw new HttpException('City not found', HttpStatus.BAD_REQUEST);
 
@@ -129,5 +199,18 @@ export class CompanyService {
       where: { id: industry_type_id }
     })
     if (!isIndustryTypeExist) throw new HttpException('Industry Type not found', HttpStatus.BAD_REQUEST);
+  }
+
+  // Validate company model
+  async validateCompanyModel(companyObject: CompanyDto | Partial<CompanyDto>, skipMissingProperties: boolean): Promise<CompanyDto> {
+    // Convert object to dto class
+    companyObject = plainToClass(CompanyDto, companyObject);
+
+    // Validate company
+    await validateOrReject(companyObject, {
+      skipMissingProperties
+    });
+
+    return companyObject as CompanyDto;
   }
 }
