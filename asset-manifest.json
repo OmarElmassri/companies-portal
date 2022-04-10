@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/companies-portal/static/css/main.90a9f056.css",
-    "main.js": "/companies-portal/static/js/main.447487eb.js",
+    "main.js": "/companies-portal/static/js/main.126534ea.js",
     "static/js/415.0b6ef735.chunk.js": "/companies-portal/static/js/415.0b6ef735.chunk.js",
     "index.html": "/companies-portal/index.html",
     "main.90a9f056.css.map": "/companies-portal/static/css/main.90a9f056.css.map",
-    "main.447487eb.js.map": "/companies-portal/static/js/main.447487eb.js.map",
+    "main.126534ea.js.map": "/companies-portal/static/js/main.126534ea.js.map",
     "415.0b6ef735.chunk.js.map": "/companies-portal/static/js/415.0b6ef735.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90a9f056.css",
-    "static/js/main.447487eb.js"
+    "static/js/main.126534ea.js"
   ]
 }
