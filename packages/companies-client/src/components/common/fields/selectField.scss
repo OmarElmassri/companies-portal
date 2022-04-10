@@ -1,0 +1,71 @@
+.select-field {
+  .ant-select {
+    width: 100%;
+    .ant-select-selector {
+      @extend .sparag-med;
+      @extend .transition;
+      cursor: pointer !important;
+      border: 1px $black solid !important;
+      height: fit-content !important;
+      background-color: transparent !important;
+      @extend .box-sm-padd-imp;
+      .ant-select-selection-item,
+      .ant-select-selection-placeholder {
+        line-height: $line-height;
+        padding-right: unset !important;
+      }
+      .ant-select-selection-search {
+        left: 1rem !important;
+        right: 1rem !important;
+        .ant-select-selection-search-input {
+          @extend .sparag-med;
+          cursor: pointer !important;
+          margin: 0.5rem 0 !important;
+          height: unset;
+        }
+      }
+      &:focus {
+        border: 1px $brand solid !important;
+      }
+    }
+    .ant-select-selector::after {
+      line-height: $line-height !important;
+    }
+  }
+  .select-field-error {
+    .ant-select-selector {
+      border: 1px $alert solid !important;
+      &:focus {
+        border: 1px $alert solid !important;
+      }
+    }
+  }
+  .select-ar {
+    .ant-select-arrow {
+      left: 1rem;
+      right: unset;
+    }
+  }
+  .select-en {
+    .ant-select-arrow {
+      left: unset;
+      right: 0.7rem;
+    }
+  }
+}
+.select-disabled-field {
+  .ant-select {
+    .ant-select-selector {
+      cursor: not-allowed !important;
+      border: 1px $grey2 solid !important;
+      .ant-select-selection-search {
+        .ant-select-selection-search-input {
+          cursor: not-allowed !important;
+        }
+      }
+    }
+    .ant-select-arrow {
+      display: none;
+    }
+  }
+}

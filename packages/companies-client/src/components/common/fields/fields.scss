@@ -1,11 +1,11 @@
 // Input Styles
 .input-field {
   .ant-input {
-    @extend .micro-med;
+    @extend .sparag-med;
     @extend .transition;
     @extend .white-back;
     @extend .box-sm-padd;
-    @extend .border-grey2;
+    @extend .border-black;
     border-radius: 5;
     &:focus {
       @extend .border-brand;

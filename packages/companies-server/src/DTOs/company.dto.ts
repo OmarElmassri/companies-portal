@@ -47,7 +47,6 @@ export class CompanyDto {
 
   @ApiProperty()
   @IsNotEmpty({ message: `Industry Type is required` })
-  @IsInt()
   industry_type_id: number;
 
   @ApiProperty()
@@ -57,7 +56,6 @@ export class CompanyDto {
 
   @ApiProperty()
   @IsNotEmpty({ message: `Country is required` })
-  @IsInt()
   country_id: number;
 
   @ApiProperty()
@@ -67,7 +65,6 @@ export class CompanyDto {
 
   @ApiProperty()
   @IsNotEmpty({ message: `City is required` })
-  @IsInt()
   city_id: number;
 
   @ApiProperty()

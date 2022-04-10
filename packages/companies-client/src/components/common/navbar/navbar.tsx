@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 // Helpers
 import history from "../../../utils/history";
 // Components
 import { GetIcon } from "../../../assets/IconGenerator";
 import TextItem from "../text/TextItem";
 import NormalButton from "../buttons/normalButton";
+import { useLocation } from "react-router-dom";
 
 const Navbar: React.FunctionComponent = () => {
+  // Hooks
+  const location = useLocation();
+  const [isInForm, setIsInForm] = useState<boolean>(false);
+
+  history.listen((location) => {
+    setIsInForm(location.pathname.includes("companies"));
+  });
+
   return (
     <div className="white-back shadow sticky top-zero-abs">
       <div className="not-full-container vertical-med-padd flex-nowrap justify-space-between">
@@ -14,7 +23,12 @@ const Navbar: React.FunctionComponent = () => {
           <GetIcon name="building" classes="end-sm-marg" size="tiny" />
           <TextItem content="brand" classes="tiny-med text-upper" />
         </div>
-        <NormalButton content="add-company" onClick={() => {}} />
+        {!isInForm && (
+          <NormalButton
+            content="add-company"
+            onClick={() => history.push("/companies/add")}
+          />
+        )}
       </div>
     </div>
   );

@@ -26,3 +26,8 @@ export interface IError {
   path?: string;
   error?: string;
 }
+
+export interface ISelectOptions {
+  label: string;
+  value: number;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ICompany } from "../../../interfaces/company.interface";
 import { deleteCompany } from "../../../services/company";
+import history from "../../../utils/history";
 import { HandleApiHook } from "../../../utils/hooks";
 import FloatIconButton from "../../common/buttons/floatIconButton";
 import CircleLoader from "../../common/loaders/circleLoader";
@@ -74,7 +75,7 @@ const CompanyCard: React.FunctionComponent<ICompanyCardProps> = ({
           />
           <FloatIconButton
             name="edit"
-            onClick={() => {}}
+            onClick={() => history.push(`/companies/${company.code}/edit`)}
             tooltip="edit"
             size="micro2"
             classes="all-sm-marg"

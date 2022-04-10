@@ -1,7 +1,10 @@
-import { useState, useCallback } from "react";
+import { getIndustryTypes, getCountries } from './../services/company';
+import { IndustryType } from './../interfaces/industryType.interface';
+import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { message as AntMessage } from "antd";
-import { ApiData, IError } from "./interfaces";
+import { ApiData, IError, ISelectOptions } from "./interfaces";
+import { ICountry } from '../interfaces/country.interface';
 
 // Get language properties
 export function LanguageHook() {
@@ -63,24 +66,23 @@ export function HandleApiHook(isFetch?: boolean) {
         if (successMessage)
           showAlert({
             success: true,
-            message: successMessage,
-            params,
+            message: successMessage
           });
         if (onSuccess) onSuccess(data);
       },
       fail: (data: any) => {
-        if (data.errors)
-          setErrors(
-            Object.values(data.errors).map((error: any) => {
-              return { error: error.message, path: error.path };
-            })
-          );
-        if (data.error && data.description !== "expired-token")
+        if (data.message) {
           showAlert({
             success: false,
-            message: data.error,
-            params: data.params,
+            message: data.message,
           });
+        } else {
+          setErrors(
+            Object.values(data).map((error: any) => {
+              return { error: error.constraints[Object.keys(error.constraints)[0]], path: error.property };
+            })
+          );
+        }
         if (onFail) onFail(data);
         setLoading(false);
         if (isFetch) setError(true);
@@ -157,23 +159,13 @@ export const AlertHook = () => {
   interface IShowAlert {
     success?: boolean;
     message?: string;
-    params?: { [key: string]: string },
     duration?: number;
   }
 
-  const showAlert = ({ success, message, params, duration }: IShowAlert) => {
-    const translatedParams: { [key: string]: string } = {};
-    if (params) {
-      const paramsKeys = Object.keys(params);
-      paramsKeys.forEach((paramKey) => {
-        translatedParams[paramKey] = t(params[paramKey]);
-      });
-    }
+  const showAlert = ({ success, message, duration }: IShowAlert) => {
     AntMessage[success ? "success" : "error"]({
-      content: t(`${success ? "success" : "error"}.${message}`, {
-        ...translatedParams,
-      }),
-      duration: duration ? duration : success ? 2 : 5,
+      content: t(message as string),
+      duration: duration ? duration : 5,
       style: {
         fontFamily: "Ubuntu",
       },
@@ -182,3 +174,59 @@ export const AlertHook = () => {
 
   return { showAlert };
 };
+
+// Fetch Industry Types
+export const useFetchIndustryTypes = () => {
+  // Hooks
+  const { loading: industryTypesLoading, submit } = HandleApiHook(true);
+  const [industryTypes, setIndustryTypes] = useState<ISelectOptions[]>();
+
+  useEffect(() => {
+    async function fetchIndustryTypes() {
+      submit({
+        service: getIndustryTypes,
+        onSuccess: (industryTypesResult: IndustryType[]) => {
+          setIndustryTypes(industryTypesResult.map((industry: IndustryType) => {
+            const { id, name } = industry;
+            return {
+              value: id,
+              label: name
+            } as ISelectOptions
+          }))
+        },
+      });
+    }
+    fetchIndustryTypes();
+  }, []);
+
+  return { industryTypesLoading, industryTypes }
+}
+
+// Fetch Country city
+export const useFetchCountries = () => {
+  // Hooks
+  const { loading: countryLoading, submit } = HandleApiHook(true);
+  const [countries, setCountries] = useState<ISelectOptions[]>();
+  const [originalCountries, setOriginalCountries] = useState<ICountry[]>();
+
+  useEffect(() => {
+    async function fetchCountry() {
+      submit({
+        service: getCountries,
+        onSuccess: (countryResult: ICountry[]) => {
+          setOriginalCountries(countryResult);
+          setCountries(countryResult.map((country: ICountry) => {
+            const { id, name } = country;
+            return {
+              value: id,
+              label: name
+            } as ISelectOptions
+          }))
+        },
+      });
+    }
+    fetchCountry();
+  }, []);
+
+  return { countryLoading, countries, originalCountries }
+}

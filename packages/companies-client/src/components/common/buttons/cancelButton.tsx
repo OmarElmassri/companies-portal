@@ -19,7 +19,7 @@ const CancelButton: React.FunctionComponent<ICancelButton> = ({
     <TextItem
       content={content}
       onClick={onClick}
-      classes={`cancel-btn sparag-med pointer scale-hover fit-content second-hover box-sm-marg ${
+      classes={`cancel-btn micro-med pointer scale-hover fit-content second-hover box-sm-marg ${
         disabled ? "disabled" : ""
       } ${classes}`}
     />

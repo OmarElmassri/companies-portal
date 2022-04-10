@@ -14,8 +14,8 @@ export const listCompanies = ({ apiData }: { apiData: ApiData }) => {
   getRequest(endpoint + '/', apiData);
 }
 
-export const getCompany = ({ apiData }: { apiData: ApiData }, companyCode: string) => {
-  getRequest(endpoint + `/${companyCode}`, apiData);
+export const getCompany = ({ apiData, urlParam }: { apiData: ApiData, urlParam?: string }) => {
+  getRequest(endpoint + `/${urlParam}`, apiData);
 }
 
 export const createCompany = ({ apiData }: { apiData: ApiData }) => {

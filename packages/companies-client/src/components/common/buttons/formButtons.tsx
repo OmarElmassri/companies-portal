@@ -1,4 +1,5 @@
 import React from "react";
+import CircleLoader from "../loaders/circleLoader";
 // Components
 import CancelButton from "./cancelButton";
 import NormalButton from "./normalButton";
@@ -8,7 +9,7 @@ interface IFormButtons {
   icon?: string;
   radial?: boolean;
   disabled?: boolean;
-  onSubmit: () => void;
+  onSubmit?: () => void;
   classes?: string;
   second?: boolean;
   cancelContent?: string;
@@ -23,12 +24,12 @@ const FormButtons: React.FunctionComponent<IFormButtons> = ({
   onSubmit,
   classes,
   second,
-
   cancelContent,
   onCancel,
 }: IFormButtons) => {
   return (
     <div className={`flex-nowrap justify-end ${classes}`}>
+      {disabled && <CircleLoader size="small" />}
       {onCancel && (
         <CancelButton
           content={cancelContent ?? "action.cancel"}
@@ -40,7 +41,7 @@ const FormButtons: React.FunctionComponent<IFormButtons> = ({
         disabled={disabled}
         content={submitContent ?? "action.submit"}
         icon={icon}
-        onClick={onSubmit}
+        onClick={onSubmit ? onSubmit : () => {}}
         radial={radial}
         second={second}
       />

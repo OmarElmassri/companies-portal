@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // Packages
 import { Input } from "antd";
 // Components
@@ -22,7 +22,7 @@ interface HeadTextFieldProps {
   disableSubmit?: boolean;
 }
 
-const HeadTextField = ({
+const HeadTextField: React.FunctionComponent<HeadTextFieldProps> = ({
   name,
   place,
   innerPlace,
@@ -71,7 +71,7 @@ const HeadTextField = ({
           style={{ fontFamily: "Ubuntu" }}
         />
       </div>
-      {error && <FieldFooter error={error} fieldName={name ?? place} />}
+      {error && <FieldFooter error={error} />}
     </div>
   );
 };
