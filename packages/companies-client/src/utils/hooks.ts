@@ -98,7 +98,7 @@ export function HandleApiHook(isFetch?: boolean) {
   };
 
   interface ISubmit {
-    service: (apiData: ApiData) => void;
+    service: ({ apiData, urlParam }: { apiData: ApiData, urlParam?: string }) => void;
     body?: any;
     query?: { [key: string]: string };
     headers?: { [key: string]: string };
@@ -106,6 +106,7 @@ export function HandleApiHook(isFetch?: boolean) {
     params?: { [key: string]: string },
     onSuccess?: (value: any) => void;
     onFail?: (value: any) => void;
+    urlParam?: string;
   }
 
   // Submit Form
@@ -118,19 +119,22 @@ export function HandleApiHook(isFetch?: boolean) {
     params,
     onSuccess,
     onFail,
+    urlParam
   }: ISubmit) => {
     resetErrors();
     setLoading(true);
     service(
-      getEndpointApi({
-        body,
-        query,
-        headers,
-        successMessage,
-        params,
-        onSuccess,
-        onFail,
-      })
+      {
+        apiData: getEndpointApi({
+          body,
+          query,
+          headers,
+          successMessage,
+          params,
+          onSuccess,
+          onFail,
+        }), urlParam
+      }
     );
   };
 

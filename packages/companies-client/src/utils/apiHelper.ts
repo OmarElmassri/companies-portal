@@ -1,7 +1,8 @@
 import axios from "axios";
 import { ApiData } from "./interfaces";
 
-axios.defaults.baseURL = 'https://companies-server.herokuapp.com';
+axios.defaults.baseURL = 'http://localhost:3001';
+// axios.defaults.baseURL = 'https://companies-server.herokuapp.com';
 
 export function postRequest(route: string, data: ApiData) {
   axios
