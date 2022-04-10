@@ -10,7 +10,7 @@ Monorepo managed by Lerna and yarn workspaces containing app client (ReactJS), a
 
 [Companies-Portal](https://omarelmassri.github.io/companies-portal/)
 
-Application Front-End hosted on github pages and Back-End/Database hosted on heroku.
+Application Front-End hosted on github pages and Back-End/Database hosted on heroku. It may gives you at first error fetching or some delay because the heroku dyno on heroku sleeps after some time and this delay because it starting.
 
 # Usage
 
