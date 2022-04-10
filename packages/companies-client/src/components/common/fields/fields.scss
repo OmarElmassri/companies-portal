@@ -1,0 +1,89 @@
+// Input Styles
+.input-field {
+  .ant-input {
+    @extend .micro-med;
+    @extend .transition;
+    @extend .white-back;
+    @extend .box-sm-padd;
+    @extend .border-grey2;
+    border-radius: 5;
+    &:focus {
+      @extend .border-brand;
+    }
+  }
+}
+.input-error-field {
+  @extend .border-alert-imp;
+}
+.input-disabled-field {
+  .ant-input {
+    @extend .border-grey2;
+    @extend .trans-back-imp;
+  }
+}
+
+.ant-picker-panel {
+  direction: ltr !important;
+}
+.country-dial {
+  @extend .flex-nowrap;
+  justify-content: flex-start;
+  direction: ltr;
+  .flag {
+    transform: scale(1.3) translateX(3px);
+  }
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .country-dial {
+    .flag {
+      width: 13px;
+      margin-right: 0.7rem;
+    }
+    .code {
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+  .country-dial {
+    .flag {
+      width: 15px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+  .country-dial {
+    .flag {
+      width: 18px;
+      margin-right: 0.8rem;
+    }
+    .code {
+      margin-right: 0.3rem;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+  .country-dial {
+    .flag {
+      width: 20px;
+      margin-right: 1rem;
+    }
+    .code {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

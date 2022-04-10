@@ -13,7 +13,6 @@ export function postRequest(route: string, data: ApiData) {
       data.success && data.success(res.data);
     })
     .catch((err) => {
-      console.log(err);
       if (err.response) data.fail && data.fail(err.response.data);
       else data.error && data.error();
     });
@@ -28,7 +27,34 @@ export function putRequest(route: string, data: ApiData) {
       data.success && data.success(res.data);
     })
     .catch((err) => {
-      console.log(err);
+      if (err.response) data.fail && data.fail(err.response.data);
+      else data.error && data.error();
+    });
+}
+export function patchRequest(route: string, data: ApiData) {
+  axios
+    .patch(route, data.body, {
+      params: data.query,
+      headers: data.headers,
+    })
+    .then((res) => {
+      data.success && data.success(res.data);
+    })
+    .catch((err) => {
+      if (err.response) data.fail && data.fail(err.response.data);
+      else data.error && data.error();
+    });
+}
+export function deleteRequest(route: string, data: ApiData) {
+  axios
+    .delete(route, {
+      params: data.query,
+      headers: data.headers,
+    })
+    .then((res) => {
+      data.success && data.success(res.data);
+    })
+    .catch((err) => {
       if (err.response) data.fail && data.fail(err.response.data);
       else data.error && data.error();
     });

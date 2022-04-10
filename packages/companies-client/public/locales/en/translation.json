@@ -1,5 +1,8 @@
 {
-  "brand": "Company-Portal",
+  "brand": "Company Portal",
+  "results": "{{value}} Companies Found",
+  "add-company": "Add New Company",
+  "search": "Search by company name...",
   "action": {
     "iam-sure": "I'm Sure",
     "iam-not": "i'm not",

@@ -1,0 +1,85 @@
+.circle-loader {
+  width: fit-content;
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .circle-tiny {
+    .MuiCircularProgress-root {
+      width: 14px !important;
+      height: 14px !important;
+    }
+  }
+  .circle-small {
+    .MuiCircularProgress-root {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+  .circle-tiny {
+    .MuiCircularProgress-root {
+      width: 17px !important;
+      height: 17px !important;
+    }
+  }
+  .circle-small {
+    .MuiCircularProgress-root {
+      width: 23px !important;
+      height: 23px !important;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+  .circle-tiny {
+    .MuiCircularProgress-root {
+      width: 19px !important;
+      height: 19px !important;
+    }
+  }
+  .circle-small {
+    .MuiCircularProgress-root {
+      width: 25px !important;
+      height: 25px !important;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+  .circle-tiny {
+    .MuiCircularProgress-root {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+  .circle-small {
+    .MuiCircularProgress-root {
+      width: 26px !important;
+      height: 26px !important;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .circle-tiny {
+    .MuiCircularProgress-root {
+      width: 24px !important;
+      height: 24px !important;
+    }
+  }
+  .circle-small {
+    .MuiCircularProgress-root {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+}

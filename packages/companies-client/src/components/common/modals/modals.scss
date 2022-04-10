@@ -1,0 +1,52 @@
+.custom-modal,
+.confirm-modal {
+  .content-box {
+    max-height: 400px;
+    max-width: 600px;
+  }
+  .MuiPaper-root {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .radio-group {
+    justify-content: flex-start;
+  }
+}
+.confirm-modal {
+  .MuiPaper-root {
+    margin: 0 !important;
+  }
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .custom-modal {
+    .content-box {
+      min-width: 0;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 768px and down to 600px) */
+@media only screen and (min-width: 600px) {
+  .custom-modal {
+    .content-box {
+      max-width: 500px;
+      min-width: 400px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 992px and down to 768px) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 1200px and down to 992px) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
