@@ -2,7 +2,7 @@
   "name": "companies-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://OmarElmassri.github.io/",
+  "homepage": "http://OmarElmassri.github.io/companies-portal",
   "dependencies": {
     "@craco/craco": "6.4.3",
     "@material-ui/core": "4.12.3",

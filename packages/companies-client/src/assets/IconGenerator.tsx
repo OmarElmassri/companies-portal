@@ -26,7 +26,7 @@ export const GetIcon = ({
       }-back ${disabled && "icon-disabled"} ${classes}`}
       onClick={onClick}
       style={{
-        WebkitMask: `url(/assets/icons/${
+        WebkitMask: `url(${process.env.PUBLIC_URL}/assets/icons/${
           name ?? "error"
         }.svg) no-repeat center`,
         mask: `url(/assets/icons/${name ?? "error"}.svg) no-repeat center`,
