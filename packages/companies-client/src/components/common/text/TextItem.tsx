@@ -59,13 +59,13 @@ const TextItem = ({
 
   if (span) {
     return (
-      <span onClick={onClick} className={`text-justify ${classes}`}>
+      <span onClick={onClick} className={`text-item text-justify ${classes}`}>
         {textContent()}
       </span>
     );
   } else
     return (
-      <div onClick={onClick} className={`text-justify ${classes}`}>
+      <div onClick={onClick} className={`text-item text-justify ${classes}`}>
         {textContent()}
       </div>
     );

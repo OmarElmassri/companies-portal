@@ -3,6 +3,18 @@
   "results": "{{value}} Companies Found",
   "add-company": "Add New Company",
   "search": "Search by company name...",
+  "no-companies": "No Companies Found...",
+  "edit": "Edit",
+  "delete": "Delete",
+  "company": {
+    "id": "Id",
+    "name": "Company Name",
+    "description": "Description",
+    "industry-type": "Industry Type",
+    "country": "Country",
+    "city": "City",
+    "address": "Address"
+  },
   "action": {
     "iam-sure": "I'm Sure",
     "iam-not": "i'm not",

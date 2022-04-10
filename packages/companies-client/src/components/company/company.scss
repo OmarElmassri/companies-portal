@@ -1,0 +1,59 @@
+.company-table {
+  @extend .grid;
+  .text-item {
+    @extend .align-self-center;
+  }
+}
+
+//// Media Queries ////
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 0) {
+  .company-table {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    .address,
+    .description,
+    .city,
+    .country {
+      display: none;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .company-table {
+    grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr 1fr;
+    .city,
+    .country {
+      display: inherit;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .company-table {
+    grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr 1fr;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .company-table {
+    grid-template-columns: 1fr 1.5fr 2fr 0.5fr 0.5fr 1fr;
+    .description {
+      display: inherit;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .company-table {
+    grid-template-columns: 1fr 1.5fr 2fr 0.5fr 0.5fr 2fr 1fr;
+    .address {
+      display: inherit;
+    }
+  }
+}

@@ -39,7 +39,7 @@ const NormalButton = ({
       <TextItem
         classes={`${
           disabled ? "white" : second ? "brand" : "white"
-        } side-med-marg micro-med`}
+        } side-med-marg micro-med text-center`}
         content={content}
       />
       {icon && (

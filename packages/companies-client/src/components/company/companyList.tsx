@@ -3,11 +3,12 @@ import { GetIcon } from "../../assets/IconGenerator";
 import { ICompanyPagination } from "../../interfaces/companyPagination.interface";
 import { listCompanies } from "../../services/company";
 import { HandleApiHook } from "../../utils/hooks";
-import NormalButton from "../common/buttons/normalButton";
 import HeadTextField from "../common/fields/headTextField";
 import FetchUiData from "../common/layouts/fetchUiData";
 import TextItem from "../common/text/TextItem";
 import CompanyListSkeleton from "./helpers/companyListSkeleton";
+import CompanyTableData from "./helpers/tableData";
+import TableHeader from "./helpers/tableHeader";
 
 const CompanyList: React.FunctionComponent = () => {
   // Hooks
@@ -35,25 +36,25 @@ const CompanyList: React.FunctionComponent = () => {
       classes="single-grid bottom-extend top-extend-fill"
       noWait
     >
-      <div className="flex-nowrap justify-space-between">
+      <div className="double-grid noncard-container">
         <TextItem
           content="results"
           params={{ value: companies?.count.toString() as string }}
-          classes="tiny-med"
+          classes="tiny-med text-start align-self-end"
         />
-        <div className="flex justify-end">
-          <GetIcon name="search" />
-          <div style={{ width: "50%", minWidth: "250px" }}>
+        <div className="flex-nowrap justify-end">
+          <GetIcon name="search" classes="side-sm-marg" />
+          <div style={{ minWidth: "200px" }}>
             <HeadTextField
               innerPlace="search"
               value={keyword}
               onChange={setKeyword}
-              classes="side-sm-marg"
             />
           </div>
-          <NormalButton content="add-company" onClick={() => {}} />
         </div>
       </div>
+      <TableHeader />
+      <CompanyTableData companies={companies?.data} />
     </FetchUiData>
   );
 };
