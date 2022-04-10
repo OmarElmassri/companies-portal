@@ -67,9 +67,11 @@ const SelectField: React.FunctionComponent<SelectFieldProps> = ({
           allowClear={allowClear}
           onClear={onClear}
           style={{ fontFamily: "Ubuntu" }}
-          // filterOption={(input, option) =>
-          //   // option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-          // }
+          filterOption={(input, option: any) =>
+            option?.children?.props.children
+              .toLowerCase()
+              .indexOf(input.toLowerCase()) >= 0
+          }
         >
           {options &&
             options.map((option) => {
